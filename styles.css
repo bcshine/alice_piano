@@ -962,14 +962,14 @@ body {
     
     /* 히어로 섹션 반응형 스타일 */
     .hero-section {
-        height: 50vh; /* 모바일에서는 높이를 화면 높이의 50%로 줄입니다 */
-        min-height: 400px; /* 최소 높이를 400px로 설정합니다 */
+        height: 60vh; /* 모바일에서는 높이를 화면 높이의 60%로 설정합니다 */
+        min-height: 450px; /* 최소 높이를 450px로 설정합니다 */
     }
     
-    /* 모바일에서 히어로 이미지가 전체적으로 보이도록 조정 */
+    /* 모바일에서 히어로 이미지가 화면을 가득 채우도록 조정 */
     .slide img {
-        object-fit: contain; /* 모바일에서는 이미지 전체가 보이도록 contain으로 변경 */
-        background-color: #f0f0f0; /* 빈 공간을 연한 회색으로 채움 */
+        object-fit: cover; /* 모바일에서는 이미지가 위아래 여백 없이 가득 채우도록 cover로 변경 */
+        object-position: center; /* 이미지의 중앙 부분을 우선적으로 표시 */
     }
     
     .brand-title {
