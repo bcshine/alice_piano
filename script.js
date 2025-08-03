@@ -194,3 +194,32 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// 햄버거 메뉴 토글 함수 (전역 함수로 설정)
+function toggleMobileMenu() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const loginContainer = document.querySelector('.login-container');
+    
+    // 햄버거 메뉴 버튼 애니메이션
+    mobileMenuToggle.classList.toggle('active');
+    
+    // 네비게이션 메뉴 표시/숨기기
+    navMenu.classList.toggle('active');
+    
+    // 로그인 버튼 표시/숨기기
+    loginContainer.classList.toggle('active');
+    
+    // 메뉴 항목 클릭 시 메뉴 닫기
+    const menuItems = document.querySelectorAll('.menu-item a');
+    menuItems.forEach(function(item) {
+        item.addEventListener('click', function() {
+            // 메뉴가 열려있을 때만 닫기
+            if (navMenu.classList.contains('active')) {
+                mobileMenuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                loginContainer.classList.remove('active');
+            }
+        });
+    });
+}
